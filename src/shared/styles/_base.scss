@@ -1,0 +1,68 @@
+body {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)),
+    repeating-linear-gradient(
+      0deg,
+      var(--color-paper) 0,
+      var(--color-paper) 34px,
+      var(--color-paper-strong) 35px
+    );
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.page-shell {
+  padding: 48px 20px 72px;
+}
+
+.page-shell__inner {
+  width: min(100%, var(--page-max-width));
+  margin: 0 auto;
+  padding: 32px;
+  border: 1px solid var(--color-line);
+  background-color: rgba(250, 247, 241, 0.92);
+  box-shadow: var(--shadow-card);
+}
+
+.page-shell__header {
+  max-width: 720px;
+}
+
+.page-shell__eyebrow {
+  margin: 0 0 12px;
+  color: var(--color-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.page-shell__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  font-weight: 700;
+}
+
+.page-shell__lead {
+  margin: 16px 0 0;
+  max-width: 52ch;
+  color: var(--color-ink-soft);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .page-shell {
+    padding: 20px 12px 40px;
+  }
+
+  .page-shell__inner {
+    padding: 24px 18px;
+  }
+}
