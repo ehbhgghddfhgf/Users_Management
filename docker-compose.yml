@@ -1,0 +1,24 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: bun run dev:host
+    env_file:
+      - .env
+    environment:
+      API_PROXY_TARGET: http://mock-api:3001
+    ports:
+      - "5173:5173"
+    depends_on:
+      - mock-api
+
+  mock-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: bun run mock
+    env_file:
+      - .env
+    ports:
+      - "3001:3001"
