@@ -53,7 +53,7 @@ function formatRegistrationDate(value: string): string {
       <header class="page-shell__header users-index__header">
         <h1 class="page-shell__title">Список пользователей</h1>
 
-        <RouterLink class="users-index__create-link" :to="{ name: 'users-create' }">
+        <RouterLink class="button-rect users-index__create-link" :to="{ name: 'users-create' }">
           Добавить пользователя
         </RouterLink>
       </header>
@@ -76,7 +76,7 @@ function formatRegistrationDate(value: string): string {
             />
           </label>
 
-          <button class="users-index__submit" type="submit" :disabled="isListLoading">
+          <button class="button-rect users-index__submit" type="submit" :disabled="isListLoading">
             Найти
           </button>
         </form>
@@ -113,7 +113,7 @@ function formatRegistrationDate(value: string): string {
                 </td>
                 <td>
                   <RouterLink
-                    class="users-index__edit-link"
+                    class="button-rect users-index__edit-link"
                     :to="{ name: 'users-edit', params: { id: user.id } }"
                   >
                     Редактировать
@@ -132,7 +132,7 @@ function formatRegistrationDate(value: string): string {
 
         <footer class="users-index__footer">
           <button
-            class="users-index__pager-button"
+            class="button-rect users-index__pager-button"
             type="button"
             :disabled="isListLoading || isFirstPage"
             @click="goToPage(filters.page - 1)"
@@ -145,7 +145,7 @@ function formatRegistrationDate(value: string): string {
           </span>
 
           <button
-            class="users-index__pager-button"
+            class="button-rect users-index__pager-button"
             type="button"
             :disabled="isListLoading || isLastPage"
             @click="goToPage(filters.page + 1)"
@@ -190,14 +190,6 @@ function formatRegistrationDate(value: string): string {
     font-weight: 700;
     letter-spacing: 0.02em;
     cursor: pointer;
-    transition: transform 0.16s ease, background-color 0.16s ease;
-  }
-
-  &__create-link:hover,
-  &__submit:hover,
-  &__pager-button:hover,
-  &__edit-link:hover {
-    transform: translateY(-1px);
   }
 
   &__create-link:disabled,
@@ -258,7 +250,7 @@ function formatRegistrationDate(value: string): string {
 
   &__input {
     width: 100%;
-    min-height: 48px;
+    height: 48px;
     padding: 10px 14px;
     border: 1px solid var(--color-line);
     background-color: #fcfefc;
